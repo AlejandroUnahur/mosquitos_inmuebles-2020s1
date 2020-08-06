@@ -1,6 +1,9 @@
+import inmueblesUnPoquitoMejorHecho.*
+
+
 test "casa alpina" {
-    var casaAlp = new Inmueble()
-    casaAlp.tipo("casa alpina")
-    armado.armar(casaAlp,"blanco")
+    const casaAlp = new Inmueble()
+    casaAlp.tipo(casaAlpina)
+    casaAlp.color("Blanco")
     // etc.
 }

@@ -1,0 +1,101 @@
+1) diagrama de clases :
+
+				Mosquito						Estudiante
+      				 aguante()					         peso()
+      				 picadorFrecuente()	
+      				 cantidadDePicados()
+      				 quierePicar() 
+
+Mosquito Pesado (hereda de Mosquito)			MosquitoConVeneno (hereda de Mosquito)				
+ picar(persona)						 picar(persona)
+							 descansar()
+
+MosquitoGloton (heredea de Mosquito Pesado)		MosquitoConVenenoMortal (hereda de MosquitoConVeneno)
+ quierePicar()						 picar(persona)
+							 descansar()
+							 esMortal()
+							 quierePicar()
+							
+							MosquitoAguantador( hereda de mosquitoConVenenoMortal)
+							 aguante()
+
+
+2) atributos
+
+mosquito1 = aguante(1000), cantidadPicados(0), peso(20)
+mosquito2 = aguante(1000), cantidadPicados(0), peso(20)
+mosquito3 = aguante(1000), cantidadPicados(0), veneno(20)
+mosquito4 = aguante(1000), cantidadPicados(0), veneno(20), mortalidad(10)
+malena    = 
+
+3) cuales de ellos cambia su valor con el mensaje "picar(malena)"
+
+mosquito1 = su peso pasa de 20 a 20.4
+mosquito2 = su peso pasa de 20 a 20.4
+mosquito3 = su aguante pasa de 1000 a 960 y veneno pasa de 20 a 19
+mosquito4 = su aguante pasa de 1000 a 960, veneno pasa de 20 a 19 y su mortalidad pasa de 10 a 8
+
+4) quiere picar mosquito4 ??
+
+da error porque en el method quierePicar() en la clase MosquitoConVenenoMortal se usa override y en la clase MosquitoConVeneno 
+que es la que hereda a MosquitoConVenenoMortal no hay un metodo con ese nombre.
+
+
+
+5) que cambia en el punto anterior si se agrega el metodo quierePicar() a MosquitoConVeneno?
+
+ahora si mosquito4 quiere picar , porque tiene 8 de mortalidad y 10 de veneno , y la condicion para picar a una persona
+tiene que ser que la mortalidad sea mayor a 4 y el veneno mayor a 5
+
+6) que objetos entienden los mensajes descansar,quierePicar,peso,picadorFrecuente,esMortal.
+
+descansar() = lo entienden el objeto mosquito3 y mosquito4
+quierePicar() = lo entienden todos los objetos menos malena
+peso() = lo entienden el objeto mosquito1 y mosquito2 
+picadorFrecuente() = lo entienden todos los objetos menos malena
+esMortal() = unicamente lo entiende el mosquito4
+
+7)
+
+mosquito1 = true
+mosquito2 = false
+mosquito3 = false 
+mosquito4 = true
+
+8) que me responden si les pregunto a mosquito4 y mosquito5 el mensaje esMortal?
+
+mosquito4 = false
+mosquito5 = false
+
+dan falso los dos porque el aguante que tienen es de 1800 y una de las condiciones para que sea mortal es que el aguante
+sea mayor a 2000.
+
+Inmuebles)
+
+1) que se debe modificar para agregar el inmueble tipo Departamento.
+
+ en el metodo armar(unInmueble, unColor) en el objeto armado
+ se tiene que agregar un else if para agregar el tipo departamento (else if (unMueble.tipo() == "Departamento")
+ y en la clase Inmueble se tiene que agregar metodo ponerLavadero(), ponerBaulera().
+  En el metodo cuantaGentePuedeVivir() en la clase Inmueble se tiene que agregar un else if
+
+
+else if (unMueble.tipo() ==  "Departamento" 
+{
+	unInmueble.ponerAmbientes(3)
+	unInmueble.ponerBalcon()
+	unInmueble.ponerLavadero()
+	unInmueble.ponerBaulera()
+	unInmueble.ponerTechoDeLoza()
+}
+
+else if (unInmueble.tipo() == "Departamento") 
+{
+	return 4 
+} 
+
+
+var departamento1 = new Inmueble()
+departamento1.tipo("departamento")
+armado.armar(departamento,"blanco")
+

@@ -24,7 +24,7 @@ object armado {
 }
 
 class Inmueble {
-    var property tipo
+    var property tipo = null
     var color = null
     var caracteristicas = #{} // todos los objetos que se agregan al inmueble
     var cantidadAmbientes = 0
